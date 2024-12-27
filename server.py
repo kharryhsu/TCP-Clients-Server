@@ -40,6 +40,8 @@ def start_server(addr='localhost', port=12345):
             finally:
                 client_socket.close()
                 print(f'Connection with {client_address} closed.')
+    except KeyboardInterrupt:
+        print("Exited by user.")
     except Exception as e:
         print(f'Server error: {e}')
     finally:
@@ -68,4 +70,4 @@ if __name__ == "__main__":
     else:
         addr, port = args.addr, args.port
 
-    start_server()
+    start_server(addr=addr, port=port)

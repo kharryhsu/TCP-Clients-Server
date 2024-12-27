@@ -31,6 +31,8 @@ def start_client(addr='localhost', port=12345):
                     break
             except Exception as e:
                 print(f'Error receiving data: {e}')
+    except KeyboardInterrupt:
+        print("Exited by user.")
     except ConnectionRefusedError:
         print(f"Connection failed. Is the server running at {addr}:{port}?")
     except Exception as e:
