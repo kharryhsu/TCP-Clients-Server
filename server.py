@@ -26,9 +26,9 @@ def start_server(addr='localhost', port=12345):
                     msg = input("Server: Enter message to send (or type 'exit' to end connection)\n> ")
                     
                     if msg.lower() == 'exit':
-                            print("Ending connection with client.")
-                            client_socket.send("Connection closed by server.".encode('utf-8'))
-                            break
+                        print("Ending connection with client.")
+                        client_socket.send("Connection closed by server.".encode('utf-8'))
+                        break
 
                     try:
                         client_socket.send(msg.encode('utf-8'))
