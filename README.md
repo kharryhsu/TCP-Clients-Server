@@ -7,7 +7,7 @@ This project demonstrates a simple TCP server and client implementation in Pytho
 ## Features
 
 ### Server
-- Handles multiple client connections sequentially.
+- Listens for incoming TCP packets from client.
 - Allows message exchange with clients.
 - Supports command-line argument configuration or interactive input.
 - Graceful shutdown with error handling.
@@ -57,33 +57,6 @@ This project demonstrates a simple TCP server and client implementation in Pytho
    ```
 
 ---
-
-## Example Interaction
-
-### Server Output:
-```bash
-Enter server address (default 'localhost'): 127.0.0.1
-Enter server port (default 12345):
-Server is listening on port 127.0.0.1:12345...
-Connection established with ('127.0.0.1', 54321)
-Received from client: Hello, Server!
-Server: Enter message to send (or type 'exit' to end connection)
-> Hi, Client!
-Connection with ('127.0.0.1', 54321) closed.
-```
-### Client Output:
-```bash
-Enter server address (default 'localhost'): 127.0.0.1
-Enter server port (default 12345):
-Connected to server at 127.0.0.1:12345
-Client: Enter message to send (or type 'exit' to end connection)
-> Hello, Server!
-Received from server: Hi, Client!
-Client: Enter message to send (or type 'exit' to end connection)
-> exit
-Closing connection.
-Client connection closed.
-```
 
 ## Notes
 
