@@ -1,4 +1,5 @@
 import socket
+import argparse
 
 def start_client(addr='localhost', port=12345):
     try:
@@ -38,5 +39,26 @@ def start_client(addr='localhost', port=12345):
         client_socket.close()
         print("Client connection closed.")
     
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="TCP Client")
+    parser.add_argument('--addr', type=str, default='localhost', help="Server address (default: localhost)")
+    parser.add_argument('--port', type=int, default=12345, help="Server port (default: 12345)")
+    
+    return parser.parse_args()
+
+def configure_with_input():
+    addr = input("Enter server address (default 'localhost'): ") or 'localhost'
+    port = input("Enter server port (default 12345): ")
+    port = int(port) if port else 12345
+    
+    return addr, port
+
 if __name__ == "__main__":
-    start_client()
+    args = parse_arguments()
+    
+    if args.addr == 'localhost' and args.port == 12345:
+        addr, port = configure_with_input()
+    else:
+        addr, port = args.addr, args.port
+    
+    start_client(addr=addr, port=port)
