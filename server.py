@@ -10,9 +10,12 @@ def start_server(addr='localhost', port=12345):
         print(f'Server is listening on port {addr}:{port}...')
         
         while True:
+            print("Waiting for connection...")
+            
             client_socket, client_address = server_socket.accept()
             
             print(f'Connection established with {client_address}')
+            
             try:
                 while True:
                     data = client_socket.recv(1024).decode('utf-8')
@@ -23,25 +26,26 @@ def start_server(addr='localhost', port=12345):
                     
                     print(f"Received from client: {data}")
                     
-                    msg = input("Server: Enter message to send (or type 'exit' to end connection)\n> ")
+                    msg = f"Hey, Client {client_address[0]}"
                     
                     if msg.lower() == 'exit':
-                            print("Ending connection with client.")
-                            client_socket.send("Connection closed by server.".encode('utf-8'))
-                            break
+                        print("Ending connection with client.")
+                        client_socket.send("Connection closed by server.".encode('utf-8'))
+                        break
 
                     try:
                         client_socket.send(msg.encode('utf-8'))
                     except Exception as e:
                         print(f"Error sending message: {e}")
                         break
+            except KeyboardInterrupt:
+                print("Exited by user.")
+                break
             except Exception as e:
                 print(f'Error handling client {client_address}: {e}')
             finally:
                 client_socket.close()
                 print(f'Connection with {client_address} closed.')
-    except KeyboardInterrupt:
-        print("Exited by user.")
     except Exception as e:
         print(f'Server error: {e}')
     finally:
