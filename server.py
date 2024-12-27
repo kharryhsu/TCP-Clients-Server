@@ -40,6 +40,7 @@ def start_server(addr='localhost', port=12345):
                         break
             except KeyboardInterrupt:
                 print("Exited by user.")
+                break
             except Exception as e:
                 print(f'Error handling client {client_address}: {e}')
             finally:
