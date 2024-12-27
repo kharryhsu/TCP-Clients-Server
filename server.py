@@ -1,6 +1,6 @@
 import socket
 
-def start_server(addr='localhost', port='12345'):
+def start_server(addr='localhost', port=12345):
     try:
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_socket.bind((addr, port))
@@ -22,7 +22,7 @@ def start_server(addr='localhost', port='12345'):
                     
                     print(f"Received from client: {data}")
                     
-                    msg = input("Server: Enter message to send (or type 'exit' to end connection): ")
+                    msg = input("Server: Enter message to send (or type 'exit' to end connection)\n> ")
                     
                     if msg.lower() == 'exit':
                             print("Ending connection with client.")
@@ -31,8 +31,9 @@ def start_server(addr='localhost', port='12345'):
 
                     try:
                         client_socket.send(msg.encode('utf-8'))
-                    except:
-                        print("Exited by the user")
+                    except Exception as e:
+                        print(f"Error sending message: {e}")
+                        break
             except Exception as e:
                 print(f'Error handling client {client_address}: {e}')
             finally:
