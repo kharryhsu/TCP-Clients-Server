@@ -1,4 +1,4 @@
-# Simple-TCP-Client-Server
+# TCP-Clients-Server
 
 This project demonstrates a simple TCP server and client implementation in Python. The server listens for incoming connections and allows communication with a client. Both server and client support user-configurable address and port settings via command-line arguments or interactive input.
 
