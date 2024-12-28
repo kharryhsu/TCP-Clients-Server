@@ -4,6 +4,23 @@ This project demonstrates a simple TCP server and client implementation in Pytho
 
 ---
 
+## Screenshots
+
+### Server Output
+Here’s an example of the server output when a client connects and sends a message:
+#### Server
+![Screenshot 2024-12-28 173713](https://github.com/user-attachments/assets/98a7414c-04a1-43ec-b6ad-97f3085bef8a)
+
+### Client Output
+Here’s an example of the client output after connecting to the server:
+#### Client 1
+![Screenshot 2024-12-28 173738](https://github.com/user-attachments/assets/94c7428c-82d1-49b7-a245-d7ed709436b4)
+
+#### Client 2
+![Screenshot 2024-12-28 173751](https://github.com/user-attachments/assets/92a71c32-a02f-4425-a889-153ccd70ebad)
+
+---
+
 ## Features
 
 ### Server
@@ -33,15 +50,15 @@ This project demonstrates a simple TCP server and client implementation in Pytho
 1. Navigate to the project directory.
 2. Run the server script:
    ```bash
-   python server.py --addr <server_address> --port <server_port>
+   python3 server.py --addr <server_address> --port <server_port>
    ```
    Example:
    ```bash
-   python server.py --addr 127.0.0.1 --port 12345
+   python3 server.py --addr 127.0.0.1 --port 12345
    ```
 3. If no arguments are provided, the script will prompt for input:
    ```bash
-   python server.py
+   python3 server.py
    ```
    Example of prompted input:
    ```bash
@@ -52,15 +69,15 @@ This project demonstrates a simple TCP server and client implementation in Pytho
 1. Navigate to the project directory.
 2. Run the server script:
    ```bash
-   python client.py --addr <server_address> --port <server_port>
+   python3 client.py --addr <server_address> --port <server_port>
    ```
    Example:
    ```bash
-   python client.py --addr 127.0.0.1 --port 12345
+   python3 client.py --addr 127.0.0.1 --port 12345
    ```
 3. If no arguments are provided, the script will prompt for input:
    ```bash
-   python client.py
+   python3 client.py
    ```
    Example of prompted input:
    ```bash
