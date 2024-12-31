@@ -24,17 +24,17 @@ Here’s an example of the client output after connecting to the server:
 ## Features
 
 ### Server
-- Listens for incoming TCP connections from clients.
+- Listens for incoming TCP connections.
 - Uses multithreading to handle multiple clients concurrently.
 - Allows message exchange with clients.
-- Supports command-line argument configuration or interactive input for the address and port.
-- Graceful shutdown with error handling.
-- Tracks the number of connected clients.
+- Supports address and port configuration via command-line arguments or interactive input.
+- Provides error handling and graceful shutdown.
+- Tracks and logs connected clients.
 
 ### Client
 - Connects to the server using a specified address and port.
-- Allows bidirectional communication with the server.
-- Supports command-line argument configuration or interactive input for the address and port.
+- Supports bidirectional communication with the server.
+- Configurable via command-line arguments or interactive input.
 - Handles errors and unexpected disconnections.
 
 ---
@@ -46,9 +46,21 @@ Here’s an example of the client output after connecting to the server:
 
 ## How to Run
 
-### Server
-1. Navigate to the project directory.
-2. Run the server script:
+1. **Clone the Repository**
+   
+   Clone this repository to your local machine using the following command:
+   ```bash
+   git clone https://github.com/your-username/TCP-Clients-Server.git
+   ```
+2. **Navigate to the Project Directory**
+
+   Change to the project directory:
+   ```bash
+   cd TCP-Clients-Server
+   ```
+3. **Run the Server**
+
+   Start the server script:
    ```bash
    python3 server.py --addr <server_address> --port <server_port>
    ```
@@ -56,18 +68,9 @@ Here’s an example of the client output after connecting to the server:
    ```bash
    python3 server.py --addr 127.0.0.1 --port 12345
    ```
-3. If no arguments are provided, the script will prompt for input:
-   ```bash
-   python3 server.py
-   ```
-   Example of prompted input:
-   ```bash
-   Enter server address (default 'localhost'): 127.0.0.1
-   Enter server port (default 12345): 12345
-   ```
-### Client
-1. Navigate to the project directory.
-2. Run the server script:
+4. **Run the Client**
+
+   Start the client script:
    ```bash
    python3 client.py --addr <server_address> --port <server_port>
    ```
@@ -75,11 +78,14 @@ Here’s an example of the client output after connecting to the server:
    ```bash
    python3 client.py --addr 127.0.0.1 --port 12345
    ```
-3. If no arguments are provided, the script will prompt for input:
+5. **Interactive Input (Optional)**
+
+   If no arguments are provided, the script will prompt for input. 
+   Example:
    ```bash
-   python3 client.py
+   python3 server.py
    ```
-   Example of prompted input:
+   Prompted input example:
    ```bash
    Enter server address (default 'localhost'): 127.0.0.1
    Enter server port (default 12345): 12345
@@ -87,14 +93,20 @@ Here’s an example of the client output after connecting to the server:
 
 ---
 
+## Future Improvements
+
+- Packet Header Implementation: Add packet headers for better data parsing and protocol handling.
+
+- GUI Interface: Create a graphical user interface for improved usability and visualization.
+
+---
+
 ## Notes
 
 - Ensure the server is running before starting the client.
 
-- For communication on the same machine, you can use `localhost` or `127.0.0.1` as the server address.
+- Use `localhost` or `127.0.0.1` for communication on the same machine.
 
-- If running on different machines, ensure the server's IP address is accessible from the client machine (consider firewall settings and network configurations).
+- For communication across different machines, ensure the server's IP address is accessible and firewall settings allow connections.
   
-- The server tracks the number of connected clients and prints updates on the client connection status.
-  
-- Multithreading is used on the server side to handle multiple clients concurrently, allowing each client to communicate with the server without blocking others.
+- The server logs the connection status of clients and uses multithreading to handle multiple clients simultaneously.
