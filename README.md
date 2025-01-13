@@ -44,7 +44,7 @@ Here’s an example of the client output after connecting to the server:
 
 ---
 
-## How to Run
+## Deployment
 
 1. **Clone the Repository**
    
