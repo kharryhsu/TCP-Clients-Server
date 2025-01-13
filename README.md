@@ -110,3 +110,12 @@ Here’s an example of the client output after connecting to the server:
 - For communication across different machines, ensure the server's IP address is accessible and firewall settings allow connections.
   
 - The server logs the connection status of clients and uses multithreading to handle multiple clients simultaneously.
+
+---
+
+## Contributions
+
+Thank you for your interest in this project! 🙌  
+At the moment, we are not accepting contributions as the project is still under active development.  
+
+Stay tuned for updates!
